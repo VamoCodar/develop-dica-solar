@@ -19,10 +19,13 @@ body {
     overflow-x: none;
 }
 
+::selection {
+    background: $amarelo;
+}
 
 .d__flex {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: wrap;
 }
 
 .container {
@@ -67,7 +70,7 @@ body {
     }
 
     .intro__busca {
-        border: 1px solid #3474eb65;
+        border: 1px solid #3474eb4d;
         border-radius: 30px;
         padding: 40px 21px;
         padding-bottom: 40px;
@@ -86,6 +89,14 @@ body {
     .form__busca {
         position: relative;
 
+        input:focus {
+
+
+
+            border: 1px solid #ffb7008c;
+
+        }
+
     }
 
     input {
@@ -95,7 +106,8 @@ body {
         border: 1px solid #70707038;
         width: 100%;
         color: $azul-escuro;
-        font-size: 20px;
+        font-size: 18px;
+        transition: 0.3s ease;
 
         &::placeholder {
             color: #70707075;
@@ -105,6 +117,8 @@ body {
             font-size: 18px;
 
         }
+
+
     }
 
     label {
@@ -112,6 +126,7 @@ body {
         left: 30px;
         top: 15px;
         color: $azul-escuro;
+        transition: 0.3s ease;
 
         &:before {
             content: "";
@@ -121,7 +136,9 @@ body {
             background-image: url(../img/local.svg);
             background-repeat: no-repeat;
             background-size: contain;
+            opacity: .7;
         }
+
     }
 
     .form__enviar {
@@ -136,7 +153,10 @@ body {
         cursor: pointer;
 
         &:hover {
-            transform: scale(1.06);
+            background: #ffa600;
+            // color: $azul-escuro;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
         }
     }
 }
@@ -144,6 +164,7 @@ body {
 #intro {
     position: relative;
     overflow: hidden;
+    padding-bottom: 60px;
 
     .intro__orna-1 {
         position: absolute;
@@ -186,35 +207,58 @@ body {
 
     .intro__orna-2 {
         position: absolute;
-        top: 200px;
-        width: 350px;
+        top: 380px;
+        width: 15vw;
         right: 0;
-
         height: 350px;
 
-        #bolinhas {
-            height: 100%;
-            width: 100%;
+        @include d (m) {
+            display: none;
+
         }
     }
+
 }
 
 #credenciados {
     padding: 60px 0;
+    position: relative;
 
     h1 {
-        margin: 60px 0;
-        margin-top: 20px;
+        margin-bottom: 60px;
 
         text-align: center;
         font-size: 35px;
         font-weight: bold;
         color: $azul-escuro;
+
+        @include d(m) {
+            max-width: 220px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+    }
+
+    .intro__orna-3 {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 15vw;
+
+        @include d(m) {
+            position: absolute;
+            top: 150px;
+            left: 0;
+            width: 25vw;
+            right: 0;
+            margin: 0 auto;
+        }
     }
 
     .cards {
         background: #FFFFFF 0% 0% no-repeat padding-box;
-        border: .5px solid #1643647c;
+        border: .5px solid #2280c133;
+        filter: drop-shadow(2px 1px 2px rgba(0, 0, 0, 0.1));
         border-radius: 30px;
         margin: 10px;
         max-width: 270px;
@@ -322,7 +366,7 @@ body {
     }
 
     .querser__img {
-       
+
         svg {
             margin-bottom: -20px;
 
@@ -332,9 +376,9 @@ body {
             }
         }
 
-         @include d(m) {
+        @include d(m) {
             order: 2;
-        } 
+        }
 
     }
 
@@ -374,5 +418,51 @@ body {
                 transform: scale(1.06);
             }
         }
+    }
+}
+
+#raio path {
+    opacity: 0;
+}
+
+.carregou #raio path {
+    opacity: 1;
+    stroke-dasharray: 277;
+    stroke-dashoffset: 277;
+}
+
+
+.intro__orna-3 {
+    clip-path: inset(0 100% 0 0);
+    transition: 1s ease;
+}
+
+.orna__3 .intro__orna-3 {
+    clip-path: inset(0 0 0 0);
+}
+
+#linha__azul {
+
+    animation: dash 6s ease-in-out both /* , dash 45s ease-in-out infinite alternate-reverse 5s */;
+
+}
+
+#linha__amarela {
+    animation: dash 4s ease-in-out both;
+
+}
+
+#nuvem__2 {
+    position: absolute;
+    right: 0;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 277;
+    }
+
+    to {
+        stroke-dashoffset: 0;
     }
 }
