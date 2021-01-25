@@ -18,3 +18,14 @@
     }
 
 }
+
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 277;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}

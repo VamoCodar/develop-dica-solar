@@ -149,11 +149,11 @@ body {
         text-transform: uppercase;
         color: white;
         margin-top: 15px;
-        transition: 0.5s ease;
+        transition: 0.7s ease;
         cursor: pointer;
 
         &:hover {
-            background: #ffa600;
+            background: $azul-escuro;
             // color: $azul-escuro;
             box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 
@@ -220,23 +220,27 @@ body {
 
 }
 
+@mixin tituloAzul {
+    margin-bottom: 60px;
+
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: $azul-escuro;
+
+    @include d(m) {
+        max-width: 220px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+}
+
 #credenciados {
     padding: 60px 0;
     position: relative;
 
     h1 {
-        margin-bottom: 60px;
-
-        text-align: center;
-        font-size: 35px;
-        font-weight: bold;
-        color: $azul-escuro;
-
-        @include d(m) {
-            max-width: 220px;
-            margin: 0 auto;
-            margin-bottom: 40px;
-        }
+        @include tituloAzul
     }
 
     .intro__orna-3 {
@@ -247,7 +251,7 @@ body {
 
         @include d(m) {
             position: absolute;
-            top: 150px;
+            top: 100px;
             left: 0;
             width: 25vw;
             right: 0;
@@ -260,18 +264,30 @@ body {
         border: .5px solid #2280c133;
         filter: drop-shadow(2px 1px 2px rgba(0, 0, 0, 0.1));
         border-radius: 30px;
-        margin: 10px;
+        margin: 10px 0;
         max-width: 270px;
         min-width: 255px;
 
+        &:hover {
+            .ver:after {
+                transform: translateX(7px);
+            }
+        }
+
         padding: 20px 10px;
 
+        @include d(s) {
+            width: initial;
+            min-width: initial;
+            max-width: initial;
+        }
+
         .cards__wrapper {
-            display: flex;
-            flex-wrap: nowrap !important;
+            /*  display: flex;
+            flex-wrap: nowrap !important; */
             max-height: 500px;
             overflow: hidden;
-            justify-content: space-around;
+            /*    */
 
         }
 
@@ -280,6 +296,10 @@ body {
             width: 100%;
             height: 140px;
             overflow: hidden;
+            border-bottom: .5px solid #2280c133;
+            // border-radius: 30px;
+            padding-bottom: 5px;
+
 
             img {
                 position: absolute;
@@ -288,17 +308,11 @@ body {
                 object-fit: cover;
             }
 
-            &:hover {
 
-                .ver:after {
-                    transform: translateX(5px);
-
-                }
-            }
         }
 
         h3 {
-            font-size: 22px;
+            font-size: 20px;
             color: $azul-escuro;
             font-weight: bold;
             margin-bottom: 0px;
@@ -336,20 +350,24 @@ body {
                 padding: 10px;
                 padding-right: 0px;
                 font-weight: bold;
+                padding-top: 0;
+                vertical-align: middle;
 
 
             }
 
             &:after {
                 content: "";
-                width: 15px;
-                height: 10px;
+                width: 20px;
+                height: 15px;
                 display: inline-block;
                 background-image: url(../img/arrow-y.svg);
                 background-repeat: no-repeat;
                 background-size: contain;
-                transform: rotateZ(-90deg);
+                // transform: rotateZ(-90deg);
                 transition: 0.4s ease;
+
+
             }
         }
     }
@@ -443,12 +461,14 @@ body {
 
 #linha__azul {
 
-    animation: dash 6s ease-in-out both /* , dash 45s ease-in-out infinite alternate-reverse 5s */;
+    animation: dash 2.5s ease-in-out both
+        /* , dash 45s ease-in-out infinite alternate-reverse 5s */
+    ;
 
 }
 
 #linha__amarela {
-    animation: dash 4s ease-in-out both;
+    animation: dash 1.5s ease-in-out both;
 
 }
 
@@ -457,12 +477,231 @@ body {
     right: 0;
 }
 
-@keyframes dash {
-    from {
-        stroke-dashoffset: 277;
+#blog {
+    margin-top: 60px;
+
+    h1 {
+        @include tituloAzul;
+        margin-top: 80px;
     }
 
-    to {
-        stroke-dashoffset: 0;
+    .blog__text-p {
+        text-align: center;
+        font-size: 18px;
+        color: $azul-escuro;
+        margin-bottom: 40px;
+    }
+
+    .card__blog {
+        max-width: 260px;
+        @include d(s){
+        max-width: initial;
+
+        }
+
+        &:hover {
+            .ver__mais:after {
+                transform: translateX(7px);
+            }
+        }
+    }
+
+    .blog__text-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        h3 {
+            font-size: 16px;
+            margin: 20px 0;
+            padding: 0;
+            color: $azul-escuro;
+            font-weight: bold;
+        }
+
+        .ver__mais {
+            //transition:0.3s;
+            display: inline-block;
+            cursor: pointer;
+            color: $amarelo !important;
+            vertical-align: middle;
+            margin-right: 10px;
+            font-size: 14px;
+            padding: 10px 0;
+            margin-bottom: 1px;
+
+            &:after {
+                content: "";
+                width: 20px;
+                height: 14px;
+                display: inline-block;
+                background-image: url(../img/arrow-y.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-left: 5px;
+                // transform: rotateZ(-90deg);
+                transition: 0.4s ease;
+                vertical-align: middle;
+                margin-bottom:3px;
+
+
+            }
+
+        }
+    }
+
+
+}
+
+
+#footer {
+    margin-top:100px;
+    padding: 60px 0;
+    background: $azul-claro;
+    color: white;
+    .container{
+        @include d(m){
+            max-width:500px;
+        }
+    }
+
+    h3 {
+        margin-bottom: 10px;
+        color: white;
+        margin-bottom: 20px;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    ul {
+        margin-bottom: 15px;
+
+        li {
+            margin-bottom: 10px;
+
+            a {
+                display: inline-block;
+                cursor: pointer;
+                color: white;
+                //padding: 5px;
+                transition: 0.3s;
+                font-size: 14px;
+
+                &:hover {
+                    color: $amarelo;
+
+                }
+            }
+        }
+    }
+
+    .footer__contato {
+        flex-direction: column;
+
+        a {
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+
+            &:hover {
+                color: $amarelo;
+
+            }
+
+        }
+    }
+.footer__logo{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    p{
+        font-size:14px;
+        @include d(m){
+        margin:30px 0;
+
+        }
+    }
+    @include d(m){
+        max-width:400px;
+        margin:0 auto
+    }
+}
+   .footer__sociais{
+       padding-right:30px;
+    .d__flex{
+    justify-content:space-around;
+
+    }
+
+   }
+   .footer__last{
+      @include d(m){
+        max-width:400px;
+        margin:0 auto;
+        order:-1;
+        margin-bottom:20px
+      }
+   }
+    .footer__loguin {
+        align-self: flex-start;
+        margin-top: 10px;
+        flex: 1 0 200px;
+        min-width: 200px;
+       
+
+        h3 {
+            margin-bottom: 10px;
+            color: $amarelo;
+            margin-left: 20px;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        color: white;
+
+        .d-flex {
+            flex-direction: column;
+
+        }
+
+        label {
+            margin-bottom: 5px;
+            margin-left: -5px;
+            font-size: 14px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            border-radius: 20px;
+            border: none;
+            padding: 10px 10px 10px 12px;
+            vertical-align: middle;
+        }
+
+        button {
+            background: $amarelo;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 30px;
+            max-width: 160px;
+            color: white;
+
+        }
+
+        .campo__final-esqueceu {
+            p {
+                font-size: 14px;
+                color: white;
+
+            }
+
+            a {
+                color: $amarelo;
+                cursor: pointer;
+                font-size: 14px;
+
+            }
+        }
     }
 }
