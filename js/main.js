@@ -1,6 +1,7 @@
 // menu mobile =========================
 const mediaQuery = window.matchMedia('(min-width: 992px)')
 const menuItem = document.querySelector(".menu__icon-click")
+const menuItem2 = document.querySelector(".menu__icon")
 const itemMenu = document.querySelectorAll(".atalhos a")
 const linksMenu = document.querySelector(".atalhos")
 const body = document.querySelector("body")
@@ -30,9 +31,10 @@ function menuMobile() {
 //fecha o menu
 function fechaMenu(event) {  
     if (
-        body.classList.contains("menu__open") &&
-        event.target != menuItem &&
-        event.target != linksMenu
+        event.target !== menuItem && 
+        event.target !== menuItem2 &&
+        event.target !== linksMenu &&
+        body.classList.contains("menu__open")
     ) {
         linksMenu.setAttribute("style",
         "animation: voltaMenu 300ms both ease-out;");
