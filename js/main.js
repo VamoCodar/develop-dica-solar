@@ -6,13 +6,11 @@ const itemMenu = document.querySelectorAll(".atalhos a")
 const linksMenu = document.querySelector(".atalhos")
 const body = document.querySelector("body")
 
-
-
-
 function menuMobile() {
     if (!mediaQuery.matches && !body.classList.contains("menu__open")) {
         body.classList.add("menu__open");
         body.classList.remove("menu__close");
+
     } else if (body.classList.contains("menu__open")) {
         linksMenu.setAttribute(
             "style",
@@ -28,21 +26,27 @@ function menuMobile() {
 }
 
 
+
+
+
 //fecha o menu
-function fechaMenu(event) {  
+function fechaMenu(event) {
     if (
-        event.target !== menuItem && 
+        event.target !== menuItem &&
         event.target !== menuItem2 &&
         event.target !== linksMenu &&
         body.classList.contains("menu__open")
+
     ) {
         linksMenu.setAttribute("style",
-        "animation: voltaMenu 300ms both ease-out;");
+            "animation: voltaMenu 300ms both ease-out;");
         setTimeout(() => {
-           
+
+            body.classList.add("menu__close");
             body.classList.remove("menu__open");
             linksMenu.removeAttribute("style", "animation");
         }, 300);
+
     }
 }
 
@@ -150,23 +154,14 @@ function checagemHome() {
         // gsap animations ========================
         const timeline = new TimelineMax();
         const bolinhasIntro = document.querySelectorAll("#bolinhas__intro path")
-
-        const bolinhas =
-
-            timeline.staggerTo(bolinhasIntro, 2, {
-                fill: "#ffb600",
-
-            }, .05);
-
-
-
-
-        //timeline 2 =================================================
         const timeline2 = new TimelineMax();
+        //timeline 2 =================================================
         const nuvem1 = document.querySelector("#nuvem__1")
         const nuvem2 = document.querySelector("#nuvem__2")
         const planta = document.querySelector("#planta")
         const painel = document.querySelector("#painel")
+
+
 
 
 
@@ -199,9 +194,6 @@ function checagemHome() {
 
 
 
-
-
-
         //Scroll SCENE ===================================
         let controller = new ScrollMagic.Controller();
 
@@ -213,10 +205,13 @@ function checagemHome() {
                 offset: 20,
                 triggerHook: 0,
             })
-            .setTween(bolinhas)
-            .addIndicators({
+           /*  .setTween(TweenMax.staggerTo(bolinhasIntro, 2, {
+                fill: "#ffb600",
+
+            }, .05)) */
+            /* .addIndicators({
                 name: "bolinhas"
-            })
+            }) */
             .on("end", function classe() {
                 body.classList.toggle("orna__3")
             });
@@ -226,7 +221,7 @@ function checagemHome() {
         var sceneCredenciado = new ScrollMagic.Scene({
                 triggerElement: "#credenciados",
                 duration: 0,
-                offset: -300,
+                offset: -700,
                 triggerHook: 0,
 
 
@@ -235,15 +230,13 @@ function checagemHome() {
             .addIndicators({
                 name: "credenciados"
             })
-        /* .on("end", function classe() {
-
-                        body.classList.toggle("orna__3")
-                    });
- */
+            .on("end", function classe() {
+                body.classList.toggle("orna__1")
+            });
 
 
         controller.addScene([
-            sceneBolinhas,
+               sceneBolinhas, 
             sceneCredenciado,
 
         ]);

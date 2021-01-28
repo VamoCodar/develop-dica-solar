@@ -193,6 +193,7 @@ body#page__home {
             top: 250px;
             left: -100px;
             width: 28vw;
+            clip-path: inset(0 0 0 0);
 
 
             @include d(m) {
@@ -227,6 +228,9 @@ body#page__home {
 
             }
         }
+        &.orna__1 .intro__orna-1 {
+            clip-path: inset(0 100% 0 0);
+        }
 
         .intro__orna-2 {
             position: absolute;
@@ -243,9 +247,9 @@ body#page__home {
 
     }
 
-  
 
-    
+
+
 
     //quer ser section =====================================
     #querser {
@@ -329,7 +333,7 @@ body#page__home {
         transition: 1s ease;
     }
 
-    .orna__3 .intro__orna-3 {
+    &.orna__3 .intro__orna-3 {
         clip-path: inset(0 0 0 0);
     }
 
@@ -429,9 +433,36 @@ body#page__home {
 
     }
 
+    .seta {
+        width: 100%;
+        display: block;
+        padding: 0 5px;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 0.30000001192092896px solid #3473EB;
+        border-radius: 24px;
+        width: 40px;
+        margin: 0 auto;
+        margin-top: 60px;
+        cursor: pointer;
+        &:hover{
+            img{
+                transform:translateY(5px)
+            }
+        }
+
+
+        img {
+            margin: 0 auto;
+            transition:0.4s ease-in-out;
+        }
+    }
+
 
 
 }
+
 @import "credenciados";
 @import "page__busca";
 @import "page__perfil";
