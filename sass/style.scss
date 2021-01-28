@@ -342,8 +342,8 @@ body#page__home {
 
     #raio path {
         opacity: 0;
-        clip-path: inset(0 0 0 0);
-        transition: clip-path 1s ease-in-out;
+        clip-path: inset(-10% -10% -10% -10%);
+        transition: clip-path .7s ease-in-out;
 
     }
 
@@ -358,6 +358,13 @@ body#page__home {
         clip-path: inset(0 100% 0 0);
         transition: 1s ease;
     }
+    
+    &.orna__3 .intro__orna-3  {
+        clip-path: inset(0 0 0 0);
+
+    }
+
+
 
     &.orna__3 #raio path {
         clip-path: inset(0 100% 0 0);

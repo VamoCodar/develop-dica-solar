@@ -26,8 +26,13 @@ function menuMobile() {
 }
 
 
+const bolinhasIntro = document.querySelector("#bolinhas__intro")
 
-
+let ooSolll =
+        TweenMax.from(bolinhasIntro, 4, {
+            x:100,
+            y:400,
+        });
 
 //fecha o menu
 /* function fechaMenu(event) {
@@ -152,9 +157,9 @@ function checagemHome() {
         })
 
         // gsap animations ========================
-        const timeline = new TimelineMax();
-        const bolinhasIntro = document.querySelectorAll("#bolinhas__intro path")
         const timeline2 = new TimelineMax();
+        const timeline = new TimelineMax();
+
         //timeline 2 =================================================
         const nuvem1 = document.querySelector("#nuvem__1")
         const nuvem2 = document.querySelector("#nuvem__2")
@@ -191,14 +196,18 @@ function checagemHome() {
 
             }, '-=12');
 
+        
 
+
+
+      
 
 
         //Scroll SCENE ===================================
         let controller = new ScrollMagic.Controller();
 
 
-        
+
 
 
         //plantas nuvens scene
@@ -220,10 +229,30 @@ function checagemHome() {
 
             });
 
+        //plantas nuvens scene
+        var sceneSol = new ScrollMagic.Scene({
+                triggerElement: "#intro",
+                duration: 500,
+                offset: 100,
+                triggerHook: 0,
+
+
+            })
+            .setTween(ooSolll)
+            .addIndicators({
+                name: "bolinhas"
+            })
+        /* .on("start", function classe() {
+            body.classList.toggle("orna__1")
+            body.classList.toggle("orna__3")
+
+        }); */
+
+
 
         controller.addScene([
-            
             sceneCredenciado,
+            sceneSol,
 
         ]);
     } else if (pageBusca) {
