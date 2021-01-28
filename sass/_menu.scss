@@ -28,7 +28,7 @@
         transition: 0.4s;
 
         &:hover {
-          color:$amarelo;
+          color: $amarelo;
         }
       }
 
@@ -72,7 +72,7 @@
       height: 30px;
       transition: 0.4s ease;
 
-     /*  &:hover {
+      /*  &:hover {
         path {
           //fill: $roxo !important;
         }
@@ -89,10 +89,11 @@
   }
 }
 
-.fixed-top{
+.fixed-top {
   transition: box-shadow 0.5s ease-in-out;
 
-} 
+}
+
 .ativo__scrool .fixed-top {
   box-shadow: 0px 3px 10px #0000000b;
 
@@ -106,7 +107,7 @@
     display: block;
     padding: 20px 0;
     height: 80px;
-   
+
     background: white;
 
     /* .bg__blur {
@@ -272,9 +273,10 @@
   z-index: 98;
   top: 0;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+ 
 
-  li:first-child{
-    margin-top:20px;
+  li:first-child {
+    margin-top: 20px;
   }
 
   li {
@@ -283,7 +285,24 @@
     a {
       text-transform: uppercase;
       color: $azul-escuro;
-      font-size:20px;
+      font-size: 18px;
+      font-weight: 400;
     }
+  }
+
+  &:after {
+    content: "";  
+    background-image: url(../img/orna-2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:80px;
+    height:80px;
+    position: absolute;
+   
+    width: 279px;
+    height: 190px;
+    position: absolute;
+    bottom: -10px;
+    left: -60px;
   }
 }

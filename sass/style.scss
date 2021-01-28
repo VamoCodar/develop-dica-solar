@@ -46,6 +46,9 @@ body#page__home {
     flex-flow: wrap;
 }
 
+.menu {
+    background: white;
+}
 
 //page HOME ==============================================
 #page__home {
@@ -193,7 +196,6 @@ body#page__home {
             top: 250px;
             left: -100px;
             width: 28vw;
-            clip-path: inset(0 0 0 0);
 
 
             @include d(m) {
@@ -228,7 +230,13 @@ body#page__home {
 
             }
         }
-        &.orna__1 .intro__orna-1 {
+
+        #raio {
+            clip-path: inset(0 0 0 0);
+
+        }
+
+        &.orna__1 #raio {
             clip-path: inset(0 100% 0 0);
         }
 
@@ -247,7 +255,17 @@ body#page__home {
 
     }
 
+    #linha__azul {
+        animation: dash 2.5s ease-in-out both
+            /* , dash 45s ease-in-out infinite alternate-reverse 5s */
+        ;
 
+    }
+
+    #linha__amarela {
+        animation: dash 1.5s ease-in-out both;
+
+    }
 
 
 
@@ -256,6 +274,11 @@ body#page__home {
         padding-top: 5px;
         background-color: $azul-claro;
         padding-bottom: -20px;
+
+        @include d(m) {
+            padding-top: 30px;
+
+        }
 
         .d__flex {
             align-items: center;
@@ -319,9 +342,12 @@ body#page__home {
 
     #raio path {
         opacity: 0;
+        clip-path: inset(0 0 0 0);
+        transition: clip-path 1s ease-in-out;
+
     }
 
-    .carregou #raio path {
+    &.carregou #raio path {
         opacity: 1;
         stroke-dasharray: 277;
         stroke-dashoffset: 277;
@@ -333,22 +359,12 @@ body#page__home {
         transition: 1s ease;
     }
 
-    &.orna__3 .intro__orna-3 {
-        clip-path: inset(0 0 0 0);
-    }
-
-    #linha__azul {
-
-        animation: dash 2.5s ease-in-out both
-            /* , dash 45s ease-in-out infinite alternate-reverse 5s */
-        ;
+    &.orna__3 #raio path {
+        clip-path: inset(0 100% 0 0);
 
     }
 
-    #linha__amarela {
-        animation: dash 1.5s ease-in-out both;
 
-    }
 
     #nuvem__2 {
         position: absolute;
@@ -446,16 +462,17 @@ body#page__home {
         margin: 0 auto;
         margin-top: 60px;
         cursor: pointer;
-        &:hover{
-            img{
-                transform:translateY(5px)
+
+        &:hover {
+            img {
+                transform: translateY(5px)
             }
         }
 
 
         img {
             margin: 0 auto;
-            transition:0.4s ease-in-out;
+            transition: 0.4s ease-in-out;
         }
     }
 

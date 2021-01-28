@@ -30,7 +30,7 @@ function menuMobile() {
 
 
 //fecha o menu
-function fechaMenu(event) {
+/* function fechaMenu(event) {
     if (
         event.target !== menuItem &&
         event.target !== menuItem2 &&
@@ -48,7 +48,7 @@ function fechaMenu(event) {
         }, 300);
 
     }
-}
+} */
 
 // menu preenchido ========================
 function menuPreenchido() {
@@ -81,7 +81,7 @@ function checagemHome() {
         const conf1 = {
             type: 'carousel',
             startAt: 3,
-            gap: 80,
+            gap: 40,
             perView: 3,
             focusAt: "center",
             rewind: false,
@@ -198,23 +198,7 @@ function checagemHome() {
         let controller = new ScrollMagic.Controller();
 
 
-        //bolinhas scene
-        var sceneBolinhas = new ScrollMagic.Scene({
-                triggerElement: "#intro",
-                duration: 300,
-                offset: 20,
-                triggerHook: 0,
-            })
-           /*  .setTween(TweenMax.staggerTo(bolinhasIntro, 2, {
-                fill: "#ffb600",
-
-            }, .05)) */
-            /* .addIndicators({
-                name: "bolinhas"
-            }) */
-            .on("end", function classe() {
-                body.classList.toggle("orna__3")
-            });
+        
 
 
         //plantas nuvens scene
@@ -230,13 +214,15 @@ function checagemHome() {
             .addIndicators({
                 name: "credenciados"
             })
-            .on("end", function classe() {
+            .on("start", function classe() {
                 body.classList.toggle("orna__1")
+                body.classList.toggle("orna__3")
+
             });
 
 
         controller.addScene([
-               sceneBolinhas, 
+            
             sceneCredenciado,
 
         ]);
@@ -416,4 +402,4 @@ checagemHome()
 menuItem.addEventListener("click", menuMobile); //click menu mobile
 itemMenu.forEach((i) => i.addEventListener("click", menuMobile)); //fecha on click
 window.addEventListener("scroll", menuPreenchido);
-body.addEventListener("click", fechaMenu);
+//body.addEventListener("click", fechaMenu);
