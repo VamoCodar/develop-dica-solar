@@ -5,9 +5,6 @@ body#page__busca {
     height: 100vh;
 }
 
-$cinza-bordas:#E0E0E0;
-$cinza-font:#757575;
-$preto:#424242;
 
 
 #page__busca {
@@ -45,7 +42,9 @@ $preto:#424242;
         display: block;
         padding-top: 100px;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+        //overflow-y: auto;
         overflow-y: auto;
+        height: 100vh;
 
         @include d(m) {
             width: 100vw;
@@ -70,38 +69,58 @@ $preto:#424242;
     #cabecalho {
         padding-bottom: 20px;
         border-bottom: 1px solid $cinza-bordas;
+        background: white;
+        position: fixed;
+        top: 80px;
+        z-index: 10;
+        padding-top: 20px;
+        width: 60vw;
 
-        .cabecalho__regiao {
-            display: flex;
+        @include d(m) {
+            width: 100vw;
+
         }
 
-        .cabecalho__texto {
-            width: 50%;
-            color: $cinza-font;
-            transition: 0.3s ease;
+        @include d(l) {
+            width: 50vw;
 
-            @include d(m) {
-                width: 100%;
-            }
         }
 
-        .regiao__atual {
-            color: $azul-escuro;
-            font-size: 22px;
-            font-weight: 500;
+    }
+
+
+
+    .cabecalho__regiao {
+        display: flex;
+    }
+
+    .cabecalho__texto {
+        width: 50%;
+        color: $cinza-font;
+        transition: 0.3s ease;
+
+        @include d(m) {
+            width: 100%;
         }
+    }
 
-        .busca {
-            max-width: 300px;
-            align-self: end;
-            margin-left: auto;
-            position: relative;
-            transition: 0.4s ease;
+    .regiao__atual {
+        color: $azul-escuro;
+        font-size: 22px;
+        font-weight: 500;
+    }
 
-            @include d(m) {
-                max-width: 80px;
-                cursor: pointer;
-                /* 
+    .busca {
+        max-width: 300px;
+        align-self: end;
+        margin-left: auto;
+        position: relative;
+        transition: 0.4s ease;
+
+        @include d(m) {
+            max-width: 50px;
+            cursor: pointer;
+            /* 
                 &:hover {
                     width: 300px;
                     max-width: initial;
@@ -109,52 +128,52 @@ $preto:#424242;
                         margin-top: 55px;
                     }
                 } */
-            }
-
-            &:before {
-                content: "";
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                background-repeat: no-repeat;
-                background-image: url(../img/page-busca/lupa.svg);
-                background-size: contain;
-                opacity: 67%;
-                position: absolute;
-                z-index: 4;
-                left: 0;
-                left: 12px;
-                top: 10px;
-            }
-
-
-
         }
 
-        input {
-            position: relative;
-            display: block;
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-image: url(../img/page-busca/lupa.svg);
+            background-size: contain;
+            opacity: 67%;
+            position: absolute;
+            z-index: 4;
+            left: 0;
+            left: 12px;
+            top: 10px;
+        }
 
-            border: 1px solid rgba(224, 224, 224, 0.67);
-            padding: 12px 0;
-            padding-left: 45px;
-            padding-right: 55px;
-            border-radius: 5px;
-            margin-left: auto;
-            margin-right: 30px;
-            transition: 0.4s ease;
-            color: $azul-escuro;
 
-            &::placeholder {
-                color: $cinza-bordas;
-            }
 
-            @include d(m) {
-                width: 40px;
-                padding-right: 0;
-                margin-left: 0;
+    }
 
-                /*  &:hover {
+    input {
+        position: relative;
+        display: block;
+
+        border: 1px solid rgba(224, 224, 224, 0.67);
+        padding: 12px 0;
+        padding-left: 45px;
+        padding-right: 55px;
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: 30px;
+        transition: 0.4s ease;
+        color: $azul-escuro;
+
+        &::placeholder {
+            color: $cinza-bordas;
+        }
+
+        @include d(m) {
+            width: 40px;
+            padding-right: 0;
+            margin-left: 0;
+
+            /*  &:hover {
                     width: 300px;
                     max-width: initial;
 
@@ -167,28 +186,30 @@ $preto:#424242;
                         max-width: initial;
                     }
                 } */
-            }
-
         }
 
-        .busca__btn {
-            position: absolute;
-            top: 12px;
-            right: 30px;
-            font-size: 14px;
-            font-weight: bold;
-            color: $azul-escuro;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity .4s ease;
-        }
+    }
 
-        .ativo.busca__btn {
-            opacity: 1
-        }
+    .busca__btn {
+        position: absolute;
+        top: 12px;
+        right: 30px;
+        font-size: 14px;
+        font-weight: bold;
+        color: $azul-escuro;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity .4s ease;
+    }
+
+    .ativo.busca__btn {
+        opacity: 1
     }
 
 
+    .resultados {
+        margin-top: 90px;
+    }
 
 
     .breadcumbs {
@@ -213,6 +234,7 @@ $preto:#424242;
 
     }
 
+
     .resultados__cidade {
         color: $preto;
         margin-left: 0px;
@@ -230,7 +252,7 @@ $preto:#424242;
         display: flex;
         flex-flow: column nowrap;
         margin-top: 20px;
-        overflow-y: auto;
+        // overflow-y: auto;
         height: 100vh;
         padding-bottom: 300px;
 
@@ -244,7 +266,7 @@ $preto:#424242;
 
     /* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
 
-    .cards__wrapper {
+    #resultado {
         &::-webkit-scrollbar {
             -webkit-appearance: none;
         }
@@ -518,14 +540,14 @@ $preto:#424242;
             position: fixed;
             bottom: 30px;
             right: 30px;
-            cursor:pointer;
+            cursor: pointer;
 
             p {
                 font-style: normal;
                 font-weight: bold;
                 font-size: 20px;
                 line-height: 27px;
-                margin-right:10px;
+                margin-right: 10px;
                 /* identical to box height */
 
 
@@ -535,4 +557,7 @@ $preto:#424242;
         }
     }
 
+    #resultados {
+        margin-top: 90px;
+    }
 }

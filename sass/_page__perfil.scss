@@ -1,0 +1,408 @@
+body#page__search {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.container {
+    max-width: 1000px;
+
+    @include d(ll) {
+        max-width: 1280px;
+    }
+}
+
+.menu__search {
+    background: white;
+}
+
+#page__search {
+
+
+    #slider__top {
+        margin-top: 80px;
+
+        .glide__slider-1[data-slider="false"] {
+            display: none;
+        }
+
+        .glide__slider-1[data-slider="true"] {
+            position: relative;
+
+            //arrow
+            .glide__arrow {
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                margin: auto 0;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+                background-color: white;
+                transition: background 0.3s;
+
+
+                @include d(s) {
+                    zoom: .6;
+                }
+
+                &:hover {
+                    background-color: rgb(235, 235, 235);
+
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    position: absolute;
+                    opacity: .8;
+                    transition: opacity .3s;
+
+
+                    //margin: 0;
+                }
+            }
+
+            .glide__arrow--left {
+                left: 10px;
+
+                &:after {
+                    background-image: url(../img/page-perfil/esquerda.svg);
+                    width: 20px;
+                    height: 20px;
+                    top: 15px;
+                    left: 12px;
+                }
+            }
+
+            .glide__arrow--right {
+                right: 10px;
+
+                &:after {
+                    background-image: url(../img/page-perfil/direita.svg);
+                    width: 20px;
+                    height: 20px;
+                    top: 15px;
+                    right: 13px;
+                }
+            }
+
+        }
+
+        .glide__slides {
+            .glide__slide {
+                height: 300px;
+                position: relative;
+
+                width: 100%;
+
+                img {
+                    object-fit: cover;
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .card__info {
+        width: 310px;
+        //  height: 560px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 0px -2px 4px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        position: relative;
+        top: -70px;
+        padding: 0 20px;
+        padding-bottom: 20px;
+        margin-left: auto;
+
+        .card__img-container {
+            position: relative;
+            width: 180px;
+            height: 130px;
+            margin: 0 auto;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                margin: 0 auto;
+            }
+        }
+
+        h3 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 21px;
+            color: #164464;
+            margin-bottom: 0px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #164464;
+            text-align: center;
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 100px;
+                bottom: -5px;
+                background: rgba(224, 224, 224, 0.67);
+                display: block;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+        }
+
+        p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 19px;
+
+            color: #424242;
+        }
+
+        .card__tel a {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px 10px;
+            background: #E5E5E5;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 19px;
+            letter-spacing: 0.01em;
+            color: #000000;
+
+            &:hover {
+                background: #d0d0d0;
+            }
+        }
+
+        .card__call {
+            margin-top: 10px;
+            border-top: 1px solid rgba(224, 224, 224, 0.67);
+
+            //call whats
+            li:nth-child(1) {
+                margin-top: 10px;
+
+                //cursor: pointer;
+
+                a {
+                    background: #018A7C;
+                    border-radius: 20px;
+                    padding: 15px 0;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #FFFFFF;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    display: block;
+                    transition: 0.3s ease;
+
+                    &:hover {
+                        background: #007468;
+
+                        span {
+                            transform: translateX(10px);
+                        }
+
+                    }
+
+                    span {
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-image: url(../img/page-perfil/whats-branco.svg);
+                        width: 20px;
+                        height: 14px;
+                        display: inline-block;
+                        margin-top: 0px;
+                        margin-left: 12px;
+                        transition: 0.4s ease;
+
+                    }
+                }
+            }
+
+            //site
+            li:nth-child(2) {
+                margin-top: 10px;
+
+                //cursor: pointer;
+
+                a {
+                    background: transparent;
+                    border-radius: 20px;
+                    padding: 15px 0;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $amarelo;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    display: block;
+                    transition: 0.3s ease;
+                    border: 1px solid $amarelo;
+
+                    &:hover {
+                        //  background:#ffb7005b;
+
+
+                        span {
+                            transform: translateX(10px);
+                        }
+
+                    }
+
+                    span {
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-image: url(../img/page-perfil/globo.svg);
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        margin-left: 5px;
+                        transition: 0.4s ease;
+                        vertical-align: sub
+                    }
+                }
+            }
+        }
+    }
+
+    //card info
+    .info__aberta {
+        margin-top: 25px;
+
+        .bread__info {
+            a {
+                color: $cinza-font;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &:after {
+                    content: "";
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    background-image: url(../img/bread.svg);
+                    width: 5px;
+                    height: 5px;
+                    display: inline-block;
+                    width: 20px;
+                    height: 10px;
+                    display: inline-block;
+                    vertical-align: initial;
+
+                }
+            }
+
+            a:last-child {
+                color: $preto;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+       
+
+        &-title {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 5px;
+
+            span {
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-image: url(../img/page-perfil/sobre.svg);
+                width: 20px;
+                height: 15px;
+                margin-right: 10px;
+                
+            }
+            
+        }
+        &-content {
+            &.marcas span{
+                background-image: url(../img/page-perfil/equip.svg);
+            }
+            &.servicos span{
+                background-image: url(../img/page-perfil/servicos.svg);
+            }
+            &.regioes span{
+                background-image: url(../img/page-perfil/regioes.svg);
+            }
+            h3 {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 21px;
+                color: #000000;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+
+            p {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 19px;
+
+                color: #707070;
+
+            }
+        }
+
+        .regioes {
+            p+p {
+                margin-left: 5px;
+
+            }
+
+            p {
+                padding-right: 5px;
+                display: inline-block;
+                border-right: 1px solid $cinza-bordas;
+            }
+
+            p:last-child {
+                border-right: transparent;
+            }
+
+        }
+    }
+}
+
+//tag final ==================
