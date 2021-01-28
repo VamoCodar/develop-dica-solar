@@ -21,9 +21,7 @@ body#page__search {
     #slider__top {
         margin-top: 80px;
 
-        .glide__slider-1[data-slider="false"] {
-            display: none;
-        }
+
 
         .glide__slider-1[data-slider="true"] {
             position: relative;
@@ -94,6 +92,11 @@ body#page__search {
 
         }
 
+        .glide__slider-1[data-slider="false"] {
+            display: none;
+
+        }
+
         .glide__slides {
             .glide__slide {
                 height: 300px;
@@ -111,6 +114,28 @@ body#page__search {
         }
     }
 
+    &.no__slide .info {
+        margin-top: 100px;
+        margin-bottom: 30px;
+    }
+
+    .card__flex {
+        @include d(m) {
+            order: -1;
+            margin-top: 40px;
+
+        }
+
+        @include d(ss) {
+            margin-top: 70px;
+
+        }
+    }
+
+    &.no__slide .card__info {
+        top: 0;
+    }
+
     .card__info {
         width: 310px;
         //  height: 560px;
@@ -122,6 +147,19 @@ body#page__search {
         padding: 0 20px;
         padding-bottom: 20px;
         margin-left: auto;
+
+        @include d(m) {
+            width: initial;
+            box-shadow: initial;
+            position: initial;
+            top: initial;
+            margin: auto;
+            //  margin-top: 20px;
+            max-width: 310px;
+            padding: 20px 0;
+
+        }
+
 
         .card__img-container {
             position: relative;
@@ -326,6 +364,19 @@ body#page__search {
                 }
             }
 
+            @include d(m) {
+                position: absolute;
+                top: -610px;
+
+                a {
+                    font-size: 12px;
+                }
+
+                @include d(ss) {
+                    top: -616px;
+                }
+            }
+
             a:last-child {
                 color: $preto;
 
@@ -335,12 +386,12 @@ body#page__search {
             }
         }
 
-       
+
 
         &-title {
             display: flex;
             align-items: center;
-            margin-top: 30px;
+            margin-top: 40px;
             margin-bottom: 5px;
 
             span {
@@ -351,20 +402,28 @@ body#page__search {
                 width: 20px;
                 height: 15px;
                 margin-right: 10px;
-                
+
             }
-            
+
+            @include d(m) {
+                margin-top: 30px;
+            }
+
         }
+
         &-content {
-            &.marcas span{
+            &.marcas span {
                 background-image: url(../img/page-perfil/equip.svg);
             }
-            &.servicos span{
+
+            &.servicos span {
                 background-image: url(../img/page-perfil/servicos.svg);
             }
-            &.regioes span{
+
+            &.regioes span {
                 background-image: url(../img/page-perfil/regioes.svg);
             }
+
             h3 {
                 font-style: normal;
                 font-weight: 500;
@@ -385,6 +444,12 @@ body#page__search {
             }
         }
 
+        .sobre .info__aberta-tittle {
+            @include d(m) {
+                margin-top: 0;
+            }
+        }
+
         .regioes {
             p+p {
                 margin-left: 5px;
@@ -401,6 +466,26 @@ body#page__search {
                 border-right: transparent;
             }
 
+        }
+    }
+
+    .mapa__container {
+        height: 300px;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+
+        @include d(m) {
+            margin-top: 30px;
+        }
+    }
+    #credenciados h1 {
+        @include d(m){
+            font-size:32px;
         }
     }
 }
