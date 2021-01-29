@@ -24,6 +24,19 @@ body#page__busca {
 
     }
 
+     .menu__mobile {
+      
+        padding: 10px 0;
+        height: 60px;
+        background: white;
+
+        .logo__1 {
+            img {
+                width: 130px;
+            }
+        }
+    }
+ 
 
     #mapa {
         width: 100%;
@@ -78,6 +91,8 @@ body#page__busca {
 
         @include d(m) {
             width: 100vw;
+            top: 50px;
+
 
         }
 
@@ -186,6 +201,7 @@ body#page__busca {
                         max-width: initial;
                     }
                 } */
+                border: 1px solid rgb(224, 224, 224);
         }
 
     }
@@ -209,6 +225,7 @@ body#page__busca {
 
     .resultados {
         margin-top: 90px;
+       
     }
 
 
@@ -526,6 +543,9 @@ body#page__busca {
             }
         }
     }
+    .cards:last-child{
+        margin-bottom: 200px;
+    }
 
     .globo__fixed {
         display: none;
@@ -559,5 +579,9 @@ body#page__busca {
 
     #resultados {
         margin-top: 90px;
+        @include d(m) {
+            margin-top: 50px;
+
+        }
     }
 }

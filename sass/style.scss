@@ -358,8 +358,8 @@ body#page__home {
         clip-path: inset(0 100% 0 0);
         transition: 1s ease;
     }
-    
-    &.orna__3 .intro__orna-3  {
+
+    &.orna__3 .intro__orna-3 {
         clip-path: inset(0 0 0 0);
 
     }
@@ -481,6 +481,16 @@ body#page__home {
             margin: 0 auto;
             transition: 0.4s ease-in-out;
         }
+    }
+
+    #bolinhas__intro {
+       transition:1s ease-in-out;
+        animation: 4s SoolStart ease-in-out both;
+
+    }
+
+    &.orna__1 #bolinhas__intro {
+        animation: 4s Sool ease-in-out both;
     }
 
 

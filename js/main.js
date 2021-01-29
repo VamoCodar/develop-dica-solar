@@ -26,13 +26,7 @@ function menuMobile() {
 }
 
 
-const bolinhasIntro = document.querySelector("#bolinhas__intro")
 
-let ooSolll =
-        TweenMax.from(bolinhasIntro, 4, {
-            x:100,
-            y:400,
-        });
 
 //fecha o menu
 /* function fechaMenu(event) {
@@ -81,90 +75,127 @@ const pagePerfil = document.getElementById("page__perfil")
 //SCRIPTS HOME ==========================
 function checagemHome() {
     if (pageHome) {
-        //conf dos sliders da home
-        const sliders = document.querySelectorAll('.glide')
-        const conf1 = {
-            type: 'carousel',
-            startAt: 3,
-            gap: 40,
-            perView: 3,
-            focusAt: "center",
-            rewind: false,
-            breakpoints: {
-                1200: {
-                    type: 'slider',
-                    rewind: false,
-                    perView: 2,
-                    focusAt: "center",
-                    gap: 20,
 
-                },
+        // register ScrollTrigger
+        //   gsap.registerPlugin(ScrollTrigger);
 
-                800: {
+        
+
+                //conf dos sliders da home
+                const sliders = document.querySelectorAll('.glide')
+                const conf1 = {
                     type: 'carousel',
-                    startAt: 1,
+                    startAt: 3,
                     gap: 40,
-                    perView: 1,
+                    perView: 3,
                     focusAt: "center",
                     rewind: false,
-                    perTouch: 1,
-                    peek: {
-                        before: 10,
-                        after: 30
-                    }
+                    breakpoints: {
+                        1200: {
+                            type: 'slider',
+                            rewind: false,
+                            perView: 2,
+                            focusAt: "center",
+                            gap: 20,
 
-                },
+                        },
 
-                710: {
-                    type: 'carousel',
-                    gap: 20,
-                    startAt: 1,
-                    perView: 1,
-                    perTouch: 1,
-                    focusAt: "center",
-                    rewind: false,
-                    peek: {
-                        before: 20,
-                        after: 20
-                    }
+                        800: {
+                            type: 'carousel',
+                            startAt: 1,
+                            gap: 40,
+                            perView: 1,
+                            focusAt: "center",
+                            rewind: false,
+                            perTouch: 1,
+                            peek: {
+                                before: 10,
+                                after: 30
+                            }
 
-                },
-                520: {
-                    type: 'slider',
-                    gap: 20,
-                    startAt: false,
-                    perView: 1,
-                    focusAt: "center",
-                    rewind: true,
-                    perTouch: 1,
+                        },
 
-                    peek: {
-                        before: 40,
-                        after: 40,
+                        710: {
+                            type: 'carousel',
+                            gap: 20,
+                            startAt: 1,
+                            perView: 1,
+                            perTouch: 1,
+                            focusAt: "center",
+                            rewind: false,
+                            peek: {
+                                before: 20,
+                                after: 20
+                            }
+
+                        },
+                        520: {
+                            type: 'slider',
+                            gap: 20,
+                            startAt: false,
+                            perView: 1,
+                            focusAt: "center",
+                            rewind: true,
+                            perTouch: 1,
+
+                            peek: {
+                                before: 40,
+                                after: 40,
+                            }
+
+                        }
+
+
                     }
 
                 }
 
 
-            }
+                //cria 2 sliders com a mesma conf
+                sliders.forEach(item => {
+                    new Glide(item, conf1).mount()
+                })
 
-        }
 
 
-        //cria 2 sliders com a mesma conf
-        sliders.forEach(item => {
-            new Glide(item, conf1).mount()
-        })
+                 
+                 TweenMax.set(bolinhasIntro,{
+                     x:0,
+                     y:0,
+                 })
+         
+         
+                 let ooSolll =
+                     TweenMax.to(bolinhasIntro, 4, {
+                         x: 100,
+                         y: 400,
+                     }); 
 
-        // gsap animations ========================
-        const timeline2 = new TimelineMax();
-        const timeline = new TimelineMax();
+        //plantas nuvens scene
+        /*  var sceneSol = new ScrollMagic.Scene({
+                  triggerElement: "#intro",
+                  duration: 500,
+                  offset: 100,
+                  triggerHook: 0,
+ 
+ 
+              })
+              .setTween(ooSolll)
+              .addIndicators({
+                  name: "bolinhas"
+              }) 
+
+
 
         //timeline 2 =================================================
+        const timeline2 = new TimelineMax();
+        const timeline = new TimelineMax();
+        // items animados ========================
         const nuvem1 = document.querySelector("#nuvem__1")
         const nuvem2 = document.querySelector("#nuvem__2")
         const planta = document.querySelector("#planta")
         const painel = document.querySelector("#painel")
+        const bolinhasIntro = document.querySelector(".intro__orna-2")
 
 
 
@@ -196,11 +227,11 @@ function checagemHome() {
 
             }, '-=12');
 
-        
 
 
 
-      
+
+
 
 
         //Scroll SCENE ===================================
@@ -224,37 +255,27 @@ function checagemHome() {
                 name: "credenciados"
             })
             .on("start", function classe() {
-                body.classList.toggle("orna__1")
+                body.classList.add("orna__1")
                 body.classList.toggle("orna__3")
 
-            });
-
-        //plantas nuvens scene
-        var sceneSol = new ScrollMagic.Scene({
-                triggerElement: "#intro",
-                duration: 500,
-                offset: 100,
-                triggerHook: 0,
-
-
             })
-            .setTween(ooSolll)
-            .addIndicators({
-                name: "bolinhas"
-            })
+            
+
+
         /* .on("start", function classe() {
-            body.classList.toggle("orna__1")
-            body.classList.toggle("orna__3")
-
-        }); */
+             body.classList.toggle("orna__1")
+             body.classList.toggle("orna__3")
+ 
+         }); */
 
 
 
         controller.addScene([
             sceneCredenciado,
-            sceneSol,
+            //  sceneSol,
 
         ]);
+
     } else if (pageBusca) {
 
         //focus ==============

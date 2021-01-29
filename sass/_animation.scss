@@ -29,3 +29,25 @@
         stroke-dashoffset: 0;
     }
 }
+
+
+@keyframes Sool {
+    0% {
+        transform: translate(0);
+
+    }
+
+    100% {
+        transform: translate(200px, 200px);
+
+    }
+}
+
+ @keyframes SoolStart {
+    100% {
+        transform: translate(100px 100px);
+
+    }
+
+  
+}
