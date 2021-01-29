@@ -85,7 +85,7 @@ function checagemHome() {
         const sliders = document.querySelectorAll('.glide')
         const conf1 = {
             type: 'carousel',
-            startAt: 3,
+            startAt: 1,
             gap: 40,
             perView: 3,
             focusAt: "center",
@@ -247,9 +247,9 @@ function checagemHome() {
 
             })
             .setTween(credenciado)
-            .addIndicators({
+           /*  .addIndicators({
                 name: "credenciados"
-            })
+            }) */
             .on("start", function classe() {
                 body.classList.add("orna__1")
                 body.classList.toggle("orna__3")
