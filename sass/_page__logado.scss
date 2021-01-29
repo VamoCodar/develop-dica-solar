@@ -17,15 +17,16 @@ body#page__logado {
 
 @mixin inputa {
     display: block;
-    border:1px solid transparent;
+    border: 1px solid transparent;
     transition: all 0.4s ease-in-out;
     padding: 10px 15px;
     background: #E5E5E5;
     border-radius: 10px;
-    width:100%;
+    width: 100%;
     cursor: text;
-    &:hover{
-        border:1px solid $azul-escuro;
+
+    &:hover {
+        border: 1px solid $azul-escuro;
     }
 
 }
@@ -87,13 +88,27 @@ body#page__logado {
 
 
         }
+         .button__excluir {
+        width: 40px;
+        height: 40px;
+        display: block;
+        position: absolute;
+        background-image: url(../img/page-perfil/fecha.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: 0.3s ease;
+        cursor: pointer;
+        top: -10px;
+        right: -12px;
+    }
     }
 
     .card__img-container {
-       // background: #d1d1d1;
+        // background: #d1d1d1;
         margin-top: 10px;
         border-top: 5px solid white;
-      
+
 
         span.button__mais {
             cursor: pointer;
@@ -146,7 +161,7 @@ body#page__logado {
     .card__info input {
         @include inputa;
         margin-top: 5px;
-        
+
 
 
     }
@@ -154,20 +169,30 @@ body#page__logado {
     #nome-empresa {
         margin: 0 auto;
 
-        margin-top:5px;
-         &::placeholder {
+        margin-top: 5px;
+
+        &::placeholder {
             color: $azul-escuro;
             font-weight: 500;
             font-size: 16px;
         }
     }
-    #whatsapp{
+
+    #whatsapp {
         border: 1px solid #007d70 !important;
-        color:#007d70  ;
+        color: #007d70;
     }
+
     #site {
         border: 1px solid $amarelo !important;
-        color:$amarelo
+        color: $amarelo
+    }
 
+   
+    .info__aberta{
+        input{
+            @include inputa; 
+            margin-top: 10px;
+        }
     }
 }
