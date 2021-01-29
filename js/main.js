@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const pageHome = document.getElementById("page__home")
 const pageBusca = document.getElementById("page__busca")
 const pagePerfil = document.getElementById("page__perfil")
+const pageLogado = document.getElementById("page__logado")
 
 //SCRIPTS HOME ==========================
 function checagemHome() {
@@ -296,7 +297,7 @@ function checagemHome() {
             if (slider.attributes[1].value === "true") {
                 new Glide('.glide__slider-1[data-slider="true"] ', {
                     type: 'carousel',
-                    startAt: 3,
+                    startAt: 1,
                     gap: 5,
                     perView: 3,
                     focusAt: "center",
@@ -367,7 +368,152 @@ function checagemHome() {
 
         //slider credenciados ===================
         new Glide("#credenciados", {
+            type: 'carousel',
+            // startAt: 3,
+            gap: 80,
+            perView: 3,
+            focusAt: "center",
+            rewind: false,
+            breakpoints: {
+                1200: {
+                    type: 'slider',
+                    rewind: false,
+                    perView: 2,
+                    focusAt: "center",
+                    gap: 20,
 
+                },
+
+                800: {
+                    type: 'carousel',
+                    startAt: 1,
+                    gap: 40,
+                    perView: 1,
+                    focusAt: "center",
+                    rewind: false,
+                    perTouch: 1,
+                    peek: {
+                        before: 10,
+                        after: 30
+                    }
+
+                },
+
+                710: {
+                    type: 'carousel',
+                    gap: 20,
+                    startAt: 1,
+                    perView: 1,
+                    perTouch: 1,
+                    focusAt: "center",
+                    rewind: false,
+                    peek: {
+                        before: 20,
+                        after: 20
+                    }
+
+                },
+                520: {
+                    type: 'slider',
+                    gap: 20,
+                    startAt: false,
+                    perView: 1,
+                    focusAt: "center",
+                    rewind: true,
+                    perTouch: 1,
+
+                    peek: {
+                        before: 40,
+                        after: 40,
+                    }
+
+                }
+
+
+            }
+
+        }).mount()
+    }
+    else if (pageLogado) {
+
+        //slider da intro =======================================
+        const slider = document.querySelector(".glide__slider-1")
+
+        function verficaSlide() {
+            if (slider.attributes[1].value === "true") {
+                new Glide('.glide__slider-1[data-slider="true"] ', {
+                    type: 'carousel',
+                    startAt: 1,
+                    gap: 5,
+                    perView: 3,
+                    focusAt: "center",
+                    rewind: false,
+                    breakpoints: {
+                        1200: {
+                            type: 'slider',
+                            rewind: false,
+                            perView: 2,
+                            focusAt: "center",
+                            gap: 10,
+
+                        },
+
+                        800: {
+                            type: 'carousel',
+                            startAt: 1,
+                            gap: 10,
+                            perView: 1,
+                            focusAt: "center",
+                            rewind: false,
+                            perTouch: 1,
+                            peek: {
+                                before: 10,
+                                after: 30
+                            }
+
+                        },
+
+                        710: {
+                            type: 'carousel',
+                            gap: 10,
+                            startAt: 1,
+                            perView: 1,
+                            perTouch: 1,
+                            focusAt: "center",
+                            rewind: false,
+                            peek: {
+                                before: 20,
+                                after: 20
+                            }
+
+                        },
+                        520: {
+                            type: 'slider',
+                            gap: 5,
+                            startAt: false,
+                            perView: 1,
+                            focusAt: "center",
+                            rewind: true,
+                            perTouch: 1,
+
+                            peek: {
+                                before: 40,
+                                after: 40,
+                            }
+
+                        }
+
+
+                    }
+                }).mount()
+            } else {
+                body.classList.add("no__slide")
+            }
+        }
+        verficaSlide()
+
+        //slider credenciados ===================
+        new Glide("#credenciados", {
             type: 'carousel',
             // startAt: 3,
             gap: 80,

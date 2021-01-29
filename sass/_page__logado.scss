@@ -1,4 +1,4 @@
-body#page__perfil{
+body#page__logado {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
 }
@@ -15,8 +15,159 @@ body#page__perfil{
     background: white;
 }
 
-#page__perfil {
-   @import "perfil__stilos";
+@mixin inputa {
+    display: block;
+    border:1px solid transparent;
+    transition: all 0.4s ease-in-out;
+    padding: 10px 15px;
+    background: #E5E5E5;
+    border-radius: 10px;
+    width:100%;
+    cursor: text;
+    &:hover{
+        border:1px solid $azul-escuro;
+    }
+
 }
 
-//tag final ==================
+#page__logado {
+    @import "perfil__stilos";
+
+    //estilos diferentes
+
+
+
+    #nome-empresa:placeholder {
+        color: #164464 !important;
+    }
+
+    .glide__slide {
+        background: #d1d1d1;
+
+
+    }
+
+    .glide__slide--active {
+        span.button__mais {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            background-color: white;
+            transition: background 0.3s ease;
+
+            &:after {
+                content: "";
+                width: 30px;
+                height: 30px;
+                display: block;
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                background-image: url(../img/page-perfil/mais.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                opacity: .6;
+                transition: 0.3s ease;
+
+            }
+
+            &:hover {
+                background-color: rgb(243, 243, 243);
+
+                &:after {
+                    opacity: 1
+                }
+            }
+
+
+        }
+    }
+
+    .card__img-container {
+       // background: #d1d1d1;
+        margin-top: 10px;
+        border-top: 5px solid white;
+      
+
+        span.button__mais {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            background-color: #d1d1d1;
+            transition: background 0.3s ease;
+        }
+
+        &:after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            display: block;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            background-image: url(../img/page-perfil/mais.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            opacity: .6;
+            transition: 0.3s ease;
+            cursor: pointer;
+
+        }
+
+        &:before {
+            content: "";
+            background-image: url(../img/logo.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 90%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+
+        }
+    }
+
+
+
+
+    .card__info input {
+        @include inputa;
+        margin-top: 5px;
+        
+
+
+    }
+
+    #nome-empresa {
+        margin: 0 auto;
+
+        margin-top:5px;
+         &::placeholder {
+            color: $azul-escuro;
+            font-weight: 500;
+            font-size: 16px;
+        }
+    }
+    #whatsapp{
+        border: 1px solid #007d70 !important;
+        color:#007d70  ;
+    }
+    #site {
+        border: 1px solid $amarelo !important;
+        color:$amarelo
+
+    }
+}

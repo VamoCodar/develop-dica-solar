@@ -16,7 +16,7 @@
 
 
 
-<body id="page__perfil">
+<body id="page__logado">
 
 
     <main id="slider__top">
@@ -25,20 +25,34 @@
 
 
             <div class="glide__track" data-glide-el="track">
+
                 <ul class="glide__slides">
 
-                    <li class="glide__slide"><img src="img/page-perfil/carousel-i1.jpg" alt="instalador-solar"></li>
+                    <li class="glide__slide">
+                        <span class="button__mais"></span>
+                        <span class="button__excluir"></span>
+                    </li>
 
-                    <li class="glide__slide"><img src="img/page-perfil/carousel-i2.jpg" alt="instalador-solar"></li>
+                    <li class="glide__slide">
+                        <span class="button__mais"></span>
 
-                    <li class="glide__slide"><img src="img/page-perfil/carousel-i3.jpg" alt="instalador-solar"></li>
+                    </li>
 
-                    <li class="glide__slide"><img src="img/page-perfil/carousel-i4.jpg" alt="instalador-solar"></li>
+                    <li class="glide__slide">
+                        <span class="button__mais"></span>
 
-                    <li class="glide__slide"><img src="img/page-perfil/carousel-i2.jpg" alt="instalador-solar"></li>
+                    </li>
 
+                    <li class="glide__slide">
+                        <span class="button__mais"></span>
+                    </li>
+
+                    <li class="glide__slide">
+                        <span class="button__mais"></span>
+                    </li>
 
                 </ul>
+
             </div>
             <div class="glide__arrows" data-glide-el="controls">
                 <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
@@ -54,11 +68,11 @@
                 <!-- coluna das info abertas -->
                 <div class="col-lg-7 info__aberta">
 
-                    <div class="bread__info">
+                    <!--  <div class="bread__info">
                         <a href="#">Início</a>
                         <a href="#">Belo Horizonte, MG</a>
                         <a href="#">Sol-Araras</a>
-                    </div>
+                    </div> -->
 
                     <div class="sobre info__aberta-content">
                         <div class="info__aberta-title">
@@ -115,32 +129,32 @@
                     <div class="card__info">
 
                         <div class="card__img-container">
-                            <img src="img/page-busca/carousel-1 1.png" alt="logo instalador">
+                            <span class="button__mais"></span>
                         </div>
-                        <h2>Sol Araras - Energia Solar</h2>
+                        <!-- <h2>Sol Araras - Energia Solar</h2> -->
+                        <input type="text" name="nome-empresa" id="nome-empresa" required placeholder="Nome Da Sua Empresa">
 
                         <ul class="card__dados">
                             <li>
                                 <h3>Endereço</h3>
                             </li>
                             <li>
-                                <p>R. Tiradentes, 1228 - Centro,
-                                    Araras - SP, 13600-071, Brasil</p>
+                                <input type="text" name="endereco" id="endereco" required placeholder="Endereço Completo">
                             </li>
                             <li>
                                 <h3>Email</h3>
                             </li>
                             <li>
-                                <p><a href="#">contato@solararas.com.br</a></p>
+                                <input type="text" name="email" id="email" required placeholder="Seu e-mail">
                             </li>
                             <li>
                                 <h3>Telefone</h3>
                             </li>
-                            <li class="card__tel"><a href="#">(19) 99626-1343</a></li>
+                            <li class="card__tel"> <input type="text" name="telefone" id="telefone" required placeholder="Numero Telefone"></li>
                         </ul>
                         <ul class="card__call">
-                            <li><a href="#">Whatsapp <span></span></a></li>
-                            <li><a href="#">Acessar Site <span></span></a></li>
+                            <li><input type="text" name="whatsapp" id="whatsapp" required placeholder="Numero De Whatsapp"></li>
+                            <li><input type="text" name="site" id="site" required placeholder="Seu Site"></li>
                         </ul>
 
                     </div>
@@ -476,8 +490,8 @@
         integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ=="
         crossorigin="anonymous"></script> -->
 
-   
-        <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
 
 
 </body>
