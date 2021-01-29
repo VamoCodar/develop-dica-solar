@@ -79,111 +79,88 @@ function checagemHome() {
         // register ScrollTrigger
         //   gsap.registerPlugin(ScrollTrigger);
 
-        
 
-                //conf dos sliders da home
-                const sliders = document.querySelectorAll('.glide')
-                const conf1 = {
+
+        //conf dos sliders da home
+        const sliders = document.querySelectorAll('.glide')
+        const conf1 = {
+            type: 'carousel',
+            startAt: 3,
+            gap: 40,
+            perView: 3,
+            focusAt: "center",
+            rewind: false,
+            breakpoints: {
+                1200: {
+                    type: 'slider',
+                    rewind: false,
+                    perView: 2,
+                    focusAt: "center",
+                    gap: 20,
+
+                },
+
+                800: {
                     type: 'carousel',
-                    startAt: 3,
+                    startAt: 1,
                     gap: 40,
-                    perView: 3,
+                    perView: 1,
                     focusAt: "center",
                     rewind: false,
-                    breakpoints: {
-                        1200: {
-                            type: 'slider',
-                            rewind: false,
-                            perView: 2,
-                            focusAt: "center",
-                            gap: 20,
+                    perTouch: 1,
+                    peek: {
+                        before: 10,
+                        after: 30
+                    }
 
-                        },
+                },
 
-                        800: {
-                            type: 'carousel',
-                            startAt: 1,
-                            gap: 40,
-                            perView: 1,
-                            focusAt: "center",
-                            rewind: false,
-                            perTouch: 1,
-                            peek: {
-                                before: 10,
-                                after: 30
-                            }
+                710: {
+                    type: 'carousel',
+                    gap: 20,
+                    startAt: 1,
+                    perView: 1,
+                    perTouch: 1,
+                    focusAt: "center",
+                    rewind: false,
+                    peek: {
+                        before: 20,
+                        after: 20
+                    }
 
-                        },
+                },
+                520: {
+                    type: 'slider',
+                    gap: 20,
+                    startAt: false,
+                    perView: 1,
+                    focusAt: "center",
+                    rewind: true,
+                    perTouch: 1,
 
-                        710: {
-                            type: 'carousel',
-                            gap: 20,
-                            startAt: 1,
-                            perView: 1,
-                            perTouch: 1,
-                            focusAt: "center",
-                            rewind: false,
-                            peek: {
-                                before: 20,
-                                after: 20
-                            }
-
-                        },
-                        520: {
-                            type: 'slider',
-                            gap: 20,
-                            startAt: false,
-                            perView: 1,
-                            focusAt: "center",
-                            rewind: true,
-                            perTouch: 1,
-
-                            peek: {
-                                before: 40,
-                                after: 40,
-                            }
-
-                        }
-
-
+                    peek: {
+                        before: 40,
+                        after: 40,
                     }
 
                 }
 
 
-                //cria 2 sliders com a mesma conf
-                sliders.forEach(item => {
-                    new Glide(item, conf1).mount()
-                })
+            }
+
+        }
+
+
+        //cria 2 sliders com a mesma conf
+        sliders.forEach(item => {
+            new Glide(item, conf1).mount()
+        })
 
 
 
-                 
-                 TweenMax.set(bolinhasIntro,{
-                     x:0,
-                     y:0,
-                 })
-         
-         
-                 let ooSolll =
-                     TweenMax.to(bolinhasIntro, 4, {
-                         x: 100,
-                         y: 400,
-                     }); 
 
-        //plantas nuvens scene
-        /*  var sceneSol = new ScrollMagic.Scene({
-                  triggerElement: "#intro",
-                  duration: 500,
-                  offset: 100,
-                  triggerHook: 0,
- 
- 
-              })
-              .setTween(ooSolll)
-              .addIndicators({
-                  name: "bolinhas"
-              }) 
+
+
 
 
 
@@ -197,7 +174,26 @@ function checagemHome() {
         const painel = document.querySelector("#painel")
         const bolinhasIntro = document.querySelector(".intro__orna-2")
 
+       /*  let ooSolll =
+            TweenMax.to(bolinhasIntro, 4, {
+                x: 100,
+                y: 400,
+            });
 
+        //plantas nuvens scene
+        var sceneSol = new ScrollMagic.Scene({
+                triggerElement: "#intro",
+                duration: 500,
+                offset: 100,
+                triggerHook: 0,
+
+
+            })
+            .setTween(ooSolll)
+            .addIndicators({
+                name: "bolinhas"
+            })
+ */
 
 
 
@@ -259,14 +255,9 @@ function checagemHome() {
                 body.classList.toggle("orna__3")
 
             })
-            
 
 
-        /* .on("start", function classe() {
-             body.classList.toggle("orna__1")
-             body.classList.toggle("orna__3")
- 
-         }); */
+
 
 
 
