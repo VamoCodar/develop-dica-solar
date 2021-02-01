@@ -15,6 +15,53 @@ let controller = new ScrollMagic.Controller();
 const timeline = new TimelineMax();
 
 
+//cookies  ==========================
+
+function cookies(functions) {
+    const container = document.querySelector('.cookies-container');
+    const save = document.querySelector('.cookies-save');
+    if (!container || !save) return null;
+
+    const localPref = JSON.parse(window.localStorage.getItem('cookies-pref'));
+    if (localPref) activateFunctions(localPref);
+
+    function getFormPref() {
+        return [...document.querySelectorAll('[data-function]')]
+            .filter((el) => el.checked)
+            .map((el) => el.getAttribute('data-function'));
+    }
+
+    function activateFunctions(pref) {
+        pref.forEach((f) => functions[f]());
+        container.style.display = 'none';
+        window.localStorage.setItem('cookies-pref', JSON.stringify(pref));
+    }
+
+    function handleSave() {
+        const pref = getFormPref();
+        activateFunctions(pref);
+    }
+
+    save.addEventListener('click', handleSave);
+}
+
+function marketing() {
+    console.log('Função de marketing');
+}
+
+function analytics() {
+    console.log('Função de analytics');
+}
+
+cookies({
+    marketing,
+    analytics,
+});
+
+
+
+
+
 // 1 =========================
 //h5 
 let dotAnima =
@@ -100,7 +147,7 @@ var sceneDot1H5 = new ScrollMagic.Scene({
         triggerElement: ".dot1",
         duration: 0,
         offset: -230,
-       triggerHook: .3,
+        triggerHook: .3,
 
 
     })
@@ -254,11 +301,11 @@ var sceneDot5Bar = new ScrollMagic.Scene({
     .addIndicators({
         name: "dot-bar"
     })
-   /*  .on("end", function classe() {
-        img1.classList.toggle("d__none")
-        img2.classList.toggle("d__block")
+/*  .on("end", function classe() {
+     img1.classList.toggle("d__none")
+     img2.classList.toggle("d__block")
 
-    }) */
+ }) */
 
 
 

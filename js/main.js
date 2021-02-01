@@ -68,6 +68,48 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+function cookies(functions) {
+    const container = document.querySelector('.cookies-container');
+    const save = document.querySelector('.cookies-save');
+    if (!container || !save) return null;
+
+    const localPref = JSON.parse(window.localStorage.getItem('cookies-pref'));
+    if (localPref) activateFunctions(localPref);
+
+    function getFormPref() {
+        return [...document.querySelectorAll('[data-function]')]
+            .filter((el) => el.checked)
+            .map((el) => el.getAttribute('data-function'));
+    }
+
+    function activateFunctions(pref) {
+        pref.forEach((f) => functions[f]());
+        container.style.display = 'none';
+        window.localStorage.setItem('cookies-pref', JSON.stringify(pref));
+    }
+
+    function handleSave() {
+        const pref = getFormPref();
+        activateFunctions(pref);
+    }
+
+    save.addEventListener('click', handleSave);
+}
+
+function marketing() {
+    console.log('Função de marketing');
+}
+
+function analytics() {
+    console.log('Função de analytics');
+}
+
+cookies({
+    marketing,
+    analytics,
+});
+
+
 const pageHome = document.getElementById("page__home")
 const pageBusca = document.getElementById("page__busca")
 const pagePerfil = document.getElementById("page__perfil")
@@ -175,7 +217,7 @@ function checagemHome() {
         const painel = document.querySelector("#painel")
         const bolinhasIntro = document.querySelector(".intro__orna-2")
 
-       /*  let ooSolll =
+        /*  let ooSolll =
             TweenMax.to(bolinhasIntro, 4, {
                 x: 100,
                 y: 400,
@@ -248,9 +290,9 @@ function checagemHome() {
 
             })
             .setTween(credenciado)
-           /*  .addIndicators({
-                name: "credenciados"
-            }) */
+            /*  .addIndicators({
+                 name: "credenciados"
+             }) */
             .on("start", function classe() {
                 body.classList.add("orna__1")
                 body.classList.toggle("orna__3")
@@ -433,8 +475,7 @@ function checagemHome() {
             }
 
         }).mount()
-    }
-    else if (pageLogado) {
+    } else if (pageLogado) {
 
         //slider da intro =======================================
         const slider = document.querySelector(".glide__slider-1")

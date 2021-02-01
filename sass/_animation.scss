@@ -43,11 +43,18 @@
     }
 }
 
- @keyframes SoolStart {
+@keyframes SoolStart {
     100% {
         transform: translate(100px 100px);
 
     }
 
-  
+
+}
+
+@keyframes slideUp {
+    to {
+        transform: initial;
+        opacity: initial;
+    }
 }
