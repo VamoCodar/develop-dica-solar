@@ -271,7 +271,7 @@ body#page__busca {
         // overflow-y: auto;
         height: 100vh;
         // padding-bottom: 300px;
-        overflow-y: auto;
+        overflow-y: scroll;
         position: relative;
 
         @include d(m) {
