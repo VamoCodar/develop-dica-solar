@@ -1,0 +1,153 @@
+body#page__cadastro {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+/* .container {
+    max-width: 1000px;
+
+    @include d(ll) {
+        max-width: 1280px;
+    }
+} */
+
+
+
+
+
+#page__cadastro {
+
+.container{
+    overflow:hidden;
+}
+    .card__cadastro {
+        max-width: 450px;
+        height: 600px;
+        background-color: white;
+        margin: 30px auto;
+        margin-top: 100px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 0px -2px 4px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        //overflow: hidden;
+        position: relative;
+       // z-index:10;
+
+        &:after {
+            content: "";
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-image: url(../img/orna-2.svg);
+            position: absolute;
+            bottom: -31px;
+            right: -35px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            z-index: -1;
+        }
+
+        @include d(s) {
+            padding: 10px;
+
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            color: #000;
+            font-weight: 500;
+            position: relative;
+
+            &:after {
+                content: "";
+                @include bg-props-contain;
+                background-image: url(../img/orna-1.svg);
+                position: absolute;
+                bottom: -30px;
+                right: 0;
+                left: 0;
+                margin: 0 auto;
+                display: block;
+                width: 100px;
+                height: 30px;
+            }
+        }
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+    }
+
+    fieldset .campo {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-top: 10px;
+
+        label {
+            position: relative;
+            background: white;
+            padding: 3px;
+            bottom: -9px;
+            left: 15px;
+            font-size: 14px;
+            color: $cinza-claro;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #d6d6d6;
+        }
+
+        label[for="nome"] {
+            max-width: 120px;
+        }
+
+        label[for="telefone"] {
+            max-width: 55px;
+        }
+
+        label[for="email"] {
+            max-width: 45px;
+        }
+
+        label[for="senha"] {
+            max-width: 44px;
+        }
+
+        label[for="senha-confirm"] {
+            max-width: 110px;
+        }
+
+    }
+
+    .enviar {
+        display: inline-block;
+        width: 220px;
+        border-radius: 20px;
+        padding: 12px;
+        text-align: center;
+        background: #ffb600;
+        margin: 0 auto;
+        margin-top: 30px;
+        font-weight: 500;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.4s ease;
+
+        &:hover {
+            background: $azul-escuro;
+        }
+    }
+
+}
