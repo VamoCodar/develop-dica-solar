@@ -152,5 +152,17 @@ body#page__sobre {
             margin-top: 30px !important;
         }
     }
+    #sobre{
+        position:relative;
+    }
+    #orna__sobre{
+        right:0;
+        position:absolute;
+        width:180px;
+
+        g{
+            width:220px;
+        }
+    }
 
 }
