@@ -6,6 +6,22 @@ $cinza-bordas:#E0E0E0;
 $cinza-font:#757575;
 $preto:#424242;
 
+@mixin inputa {
+    display: block;
+    border: 1px solid transparent;
+    transition: all 0.4s ease-in-out;
+    padding: 10px 15px;
+    background: #E5E5E5;
+    border-radius: 10px;
+    width: 100%;
+    cursor: text;
+
+    &:hover {
+        border: 1px solid $azul-escuro;
+    }
+
+}
+
 @mixin tituloAzul {
     margin-bottom: 60px;
 
@@ -503,3 +519,4 @@ body#page__home {
 @import "page__perfil";
 @import "page__loguin";
 @import "page__logado";
+@import "page__sobre";
