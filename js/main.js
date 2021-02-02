@@ -647,14 +647,14 @@ function checagemHome() {
         let credenciado =
             timeline2
             .to(nuvem1, 12, {
-                x: 80,
+                x: 130,
                 ease: "power1.out",
                 yoyo: true,
                 repeat: -1,
             })
 
             .to(nuvem2, 10, {
-                x: 100,
+                x: 150,
                 ease: "power1.out",
                 yoyo: true,
                 repeat: -1,
@@ -662,7 +662,7 @@ function checagemHome() {
             }, '-=12')
 
             .to(planta, 3, {
-                rotation: 5,
+                rotation: 10,
                 //ease: "power3.out",
                 yoyo: true,
                 repeat: -1,
