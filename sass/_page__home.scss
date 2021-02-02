@@ -339,6 +339,7 @@ body#page__home {
         h1 {
             @include tituloAzul;
             margin-top: 80px;
+            margin-bottom: 10px;
         }
 
         .blog__text-p {

@@ -1,10 +1,11 @@
 #credenciados {
     padding: 60px 0;
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
 
     h1 {
-        @include tituloAzul
+        @include tituloAzul;
+        margin-bottom: 30px;
     }
 
     .intro__orna-3 {
@@ -32,6 +33,7 @@
         max-width: 270px;
         min-width: 255px;
         padding: 20px 10px;
+        padding-bottom:0;
 
         &:hover {
             .ver:after {
@@ -62,7 +64,7 @@
         .card__img {
             position: relative;
             width: 100%;
-            height: 180px;
+            height: 120px;
             overflow: hidden;
             //border-bottom: .5px solid #2280c133;
             // border-radius: 30px;
@@ -144,19 +146,34 @@
             }
         }
     }
-    .glide__arrow{
+
+    .glide__arrow {
         border: .5px solid #2280c133;
     }
-    .glide__arrow--left{
-        left: -15px;
-        @include d(m){
-            left:10px;
+
+    .glide__arrow--left {
+        left: -55px;
+
+        @include d(m) {
+           display: none;
+            
+        }
+          @include d(s) {
+              display: block;
+            left: 10px;
         }
     }
-    .glide__arrow--right{
-        right: -15px;
-         @include d(m){
-            right:10px;
+
+    .glide__arrow--right {
+        right: -55px;
+        @include d(m) {
+            display: none;
+             
+         }
+
+        @include d(s) {
+            right: 10px;
+            display:block;
         }
     }
 }
@@ -175,7 +192,7 @@
 
 
     @include d(s) {
-        zoom: .6;
+        zoom: .5;
     }
 
     &:hover {

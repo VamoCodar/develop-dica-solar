@@ -114,6 +114,19 @@ const pageHome = document.getElementById("page__home")
 const pageBusca = document.getElementById("page__busca")
 const pagePerfil = document.getElementById("page__perfil")
 const pageLogado = document.getElementById("page__logado")
+const pageCadastro = document.getElementById("page__cadastro")
+
+
+/* $('a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+     var id = $(this).attr('href'),
+      targetOffset = $(id).offset().top;
+
+    $('html, body').animate({ 
+         scrollTop: targetOffset - 100
+     }, 300);
+}); */
+
 
 //SCRIPTS HOME ==========================
 function checagemHome() {
@@ -121,8 +134,8 @@ function checagemHome() {
 
         // register ScrollTrigger
         //   gsap.registerPlugin(ScrollTrigger);
-
-
+        
+       
 
         //conf dos sliders da home
         const sliders = document.querySelectorAll('.glide')
@@ -620,6 +633,86 @@ function checagemHome() {
             }
 
         }).mount()
+    }else if (pageCadastro){
+        //timeline 2 =================================================
+        const timeline2 = new TimelineMax();
+        const timeline = new TimelineMax();
+        // items animados ========================
+        const nuvem1 = document.querySelector("#nuvem__1")
+        const nuvem2 = document.querySelector("#nuvem__2")
+        const planta = document.querySelector("#planta")
+        const painel = document.querySelector("#painel")
+       
+    
+        let credenciado =
+            timeline2
+            .to(nuvem1, 12, {
+                x: 80,
+                ease: "power1.out",
+                yoyo: true,
+                repeat: -1,
+            })
+
+            .to(nuvem2, 10, {
+                x: 100,
+                ease: "power1.out",
+                yoyo: true,
+                repeat: -1,
+
+            }, '-=12')
+
+            .to(planta, 3, {
+                rotation: 5,
+                //ease: "power3.out",
+                yoyo: true,
+                repeat: -1,
+                transformOrigin: " bottom"
+
+            }, '-=12');
+
+
+
+
+
+
+
+
+        //Scroll SCENE ===================================
+        let controller = new ScrollMagic.Controller();
+
+
+
+
+
+        //plantas nuvens scene
+        var sceneCredenciado = new ScrollMagic.Scene({
+                triggerElement: "#credenciados",
+                duration: 0,
+                offset: -700,
+                triggerHook: 0,
+
+
+            })
+            .setTween(credenciado)
+            /*  .addIndicators({
+                 name: "credenciados"
+             }) */
+            .on("start", function classe() {
+                body.classList.add("orna__1")
+                body.classList.toggle("orna__3")
+
+            })
+
+
+
+
+
+
+        controller.addScene([
+            sceneCredenciado,
+            //  sceneSol,
+
+        ]);
     }
 }
 
