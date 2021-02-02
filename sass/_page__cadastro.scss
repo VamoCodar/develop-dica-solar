@@ -15,8 +15,11 @@ body#page__cadastro {
 
 
 #page__cadastro {
-    overflow: hidden;
+    overflow: auto;
 
+    .cadastro {
+        overflow: hidden;
+    }
 
     .card__cadastro {
         max-width: 450px;
@@ -50,10 +53,12 @@ body#page__cadastro {
 
         }
 
-        h1 {
+       
+    }
+     h1 {
             text-align: center;
             margin: 0 auto;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #000;
             font-weight: 500;
             position: relative;
@@ -63,16 +68,18 @@ body#page__cadastro {
                 @include bg-props-contain;
                 background-image: url(../img/orna-1.svg);
                 position: absolute;
-                bottom: -30px;
+                bottom: -25px;
                 right: 0;
                 left: 0;
                 margin: 0 auto;
                 display: block;
-                width: 100px;
+                width: 70px;
                 height: 30px;
             }
+            @include d(m){
+                margin-top: 85px;
+            }
         }
-    }
 
     .wrapper {
         flex-direction: column;
@@ -153,8 +160,16 @@ body#page__cadastro {
 
     .cadastro__wrapper {
         display: flex;
-        margin-top: 60px;
+        //margin-top: 60px;
         align-items: center;
+        height: 100vh;
+        min-height: 650px;
+
+        @include d(m) {
+            flex-flow: column wrap;
+
+            height: initial;
+        }
 
 
     }
@@ -165,12 +180,136 @@ body#page__cadastro {
         flex-direction: column;
         justify-content: space-between;
 
+        @include d(m) {
+            width: 100%;
+            max-width: initial;
+        }
+
         #svgCadastro {
-                margin: 0 auto;
+            margin: 0 auto;
             margin-bottom: -10px;
-            width:340px;
-        }.info__text{
-            margin-top:40px;
+            width: 300px;
+
+            @include d(m) {
+                display: none;
+            }
+        }
+
+        .info__text {
+            margin-top: 40px;
+        }
+    }
+
+    .info__text {
+        color: white;
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: $azul-escuro;
+        }
+
+        p {
+            display: inline-flex;
+            position: relative;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: $amarelo;
+            font-weight: 500;
+            padding-right: 0;
+            border-radius: 10px;
+            width: 100%;
+            align-items: center;
+            font-size: 14px;
+            max-width: 500px;
+
+            span {
+                position: absolute;
+                font-weight: 500;
+                top: 0;
+                left: 10px;
+                font-size: 22px;
+
+            }
+
+            i {
+                background-image: url(../img/1.svg);
+                @include bg-props-contain;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+
+        }
+
+        p:nth-child(2) {
+            background-color: $azul-escuro;
+
+            i {
+                background-image: url(../img/2.svg);
+
+            }
+        }
+
+        p:nth-child(3) {
+            background-color: #018A7C;
+
+            i {
+                background-image: url(../img/3.svg);
+
+            }
+        }
+    }
+
+    .ps__wrapper {
+        margin: 0 auto;
+        justify-content: center;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-content: center;
+margin-top:20px;
+        @include d(m) {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            p {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                width: 150px;
+                margin: 5px auto;
+                text-align: center;
+                padding: 5px;
+            }
+        }
+
+        position: relative;
+    }
+
+    .card__container {
+        @include d(m) {
+
+            width: 100%;
+            max-width: initial;
+        }
+
+        .card__cadastro {
+            @include d(s) {
+                max-width: initial;
+                background-color: white;
+                margin: 10px auto;
+                margin-top: 10px;
+                border-radius: 10px;
+                box-shadow: none;
+                padding: 0;
+                position: relative;
+
+            }
         }
     }
 
