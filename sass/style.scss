@@ -36,6 +36,19 @@ $preto:#424242;
         margin-bottom: 60px;
     }
 }
+
+@mixin bg-props-contain {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@mixin bg-props-cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
 ::selection {
     background: $amarelo;
 }
@@ -68,6 +81,8 @@ $preto:#424242;
 @import "cookies";
 
 @import "credenciados";
+
+@import "aviso";
 
 //pages
 @import "page__home";

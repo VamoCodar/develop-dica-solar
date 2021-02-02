@@ -3,18 +3,7 @@ body#page__sobre {
     color: white;
 }
 
-@mixin bg-props-contain {
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
 
-@mixin bg-props-cover {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-}
 
 .container {
     max-width: 1000px;
