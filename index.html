@@ -686,154 +686,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
         integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
         crossorigin="anonymous"></script>
+
+        <!-- scrolltriger SOMENTE PAG HOME -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"
         integrity="sha512-QcYm1q7RbnXmwY7HJ0H7938IS0MalTPYqGUF0fIwQgEjMBt2tqjDBt+R5I+ppdwEohjMdHnFU0H+RxmrGQ8qcg=="
         crossorigin="anonymous"></script>
-    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"
-        integrity="sha512-m/n857VfrPYUcRvzCfqfrC9aMT06TQA2V0DcX/Ovovrhswa3038FfYmHlB0l/ZMukVyKWmiwZI4Pnnd7v3FwFQ=="
-        crossorigin="anonymous"></script>
-         -->
-
-    <!-- relaxx  -->
-    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"
-        integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ=="
-        crossorigin="anonymous"></script> -->
+    
 
     <script type="text/javascript" src="js/main.js"></script>
 
 
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-        //timeline 2 =================================================
-        const timeline2 = new TimelineMax();
-        const timeline = new TimelineMax();
-        // items animados ========================
-        const nuvem1 = document.querySelector("#nuvem__1")
-        const nuvem2 = document.querySelector("#nuvem__2")
-        const planta = document.querySelector("#planta")
-        const painel = document.querySelector("#painel")
-        const bolinhasIntro = document.querySelector(".intro__orna-2")
-        //Scroll SCENE ===================================
-        let controller = new ScrollMagic.Controller();
 
-
-
-
-
-        /*  let ball = new TimelineMax()
-            .from("#intro h1", 5, {
-                x: 100,
-                y: 400,
-            })
-
-
- */
-        ScrollTrigger.create({
-            trigger: "#id",
-            start: "top top",
-            endTrigger: "#otherID",
-            end: "bottom 50%+=100px",
-            onToggle: self => console.log("toggled, isActive:", self.isActive),
-            onUpdate: self => {
-                console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity",
-                    self.getVelocity());
-            }
-        });
-
-        gsap.to(bolinhasIntro, {
-             duration: 3,
-            x: 50,
-            y: -300,
-           // rotate:360,
-            transformOrigin:"center",
-            ease: "linear",
-            scrollTrigger: {
-                trigger: "#intro h1",
-              
-                markers: true,
-                start: "top top", // when the top of the trigger hits the top of the viewport
-                end: "+=300",
-
-                //events: onEnter onLeave onEnterBack onLeaveBack
-                toggleActions: "play complete none reverse"
-                //options: play, pause, resume, reset, restart, complete, reverse,none
-            }
-        })
-
-
-
-        let credenciado =
-            timeline2
-            .to(nuvem1, 12, {
-                x: 80,
-                ease: "power1.out",
-                yoyo: true,
-                repeat: -1,
-            })
-
-            .to(nuvem2, 10, {
-                x: 100,
-                ease: "power1.out",
-                yoyo: true,
-                repeat: -1,
-
-            }, '-=12')
-
-            .to(planta, 3, {
-                rotation: 5,
-                //ease: "power3.out",
-                yoyo: true,
-                repeat: -1,
-                transformOrigin: " bottom"
-
-            }, '-=12');
-
-
-
-        //plantas nuvens scene
-        var sceneCredenciado = new ScrollMagic.Scene({
-                triggerElement: "#intro h1",
-                duration: 0,
-                offset: -100,
-                triggerHook: 0,
-
-
-            })
-            .setTween(credenciado)
-            /*   .addIndicators({
-                  name: "credenciados"
-              }) */
-            .on("start", function classe() {
-                // body.classList.add("orna__1")
-                // body.classList.toggle("orna__3")
-
-            })
-        /* 
-                //plantas nuvens scene
-                var sceneSol = new ScrollMagic.Scene({
-                        triggerElement: "#intro h1",
-                        duration: 0,
-                        offset: 100,
-                        triggerHook: 0,
-
-
-                    })
-                    .setTween(ball)
-                    .addIndicators({
-                        name: "bolinhas"
-                    })
-         */
-
-
-
-
-
-
-        controller.addScene([
-            sceneCredenciado,
-            // sceneSol,
-
-        ]);
     </script>
 </body>
 

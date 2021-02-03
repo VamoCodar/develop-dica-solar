@@ -439,11 +439,6 @@ body#page__home {
         }
     }
 
-    #bolinhas__intro {
-       transition:1s ease-in-out;
-        animation: 4s SoolStart ease-in-out both;
-
-    }
 
     &.orna__1 #bolinhas__intro {
         animation: 4s Sool ease-in-out both;

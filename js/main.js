@@ -216,6 +216,94 @@ function checagemHome() {
 
 
 
+        gsap.registerPlugin(ScrollTrigger);
+        
+        //timeline 2 =================================================
+        const timeline2 = new TimelineMax();
+        const timeline = new TimelineMax();
+        // items animados ========================
+        const nuvem1 = document.querySelector("#nuvem__1")
+        const nuvem2 = document.querySelector("#nuvem__2")
+        const planta = document.querySelector("#planta")
+        const painel = document.querySelector("#painel")
+        const bolinhasIntro = document.querySelector(".intro__orna-2")
+        //Scroll SCENE ===================================
+        let controller = new ScrollMagic.Controller();
+
+   
+        gsap.to(bolinhasIntro, {
+            duration: 1.5,
+            x: 50,
+            y: -200,
+            // rotate:360,
+            yoyo: true,
+            transformOrigin: "center",
+            ease: "sine.inOut",
+            scrollTrigger: {
+                trigger: "#intro h1",
+
+                markers: false,
+                start: "top top", // when the top of the trigger hits the top of the viewport
+                end: "+=300",
+
+                //events: onEnter onLeave onEnterBack onLeaveBack
+                toggleActions: "play complete none reverse"
+                //options: play, pause, resume, reset, restart, complete, reverse,none
+            }
+        })
+
+
+
+        let credenciado =
+            timeline2
+            .to(nuvem1, 12, {
+                x: 80,
+                ease: "power1.out",
+                yoyo: true,
+                repeat: -1,
+            })
+
+            .to(nuvem2, 10, {
+                x: 100,
+                ease: "power1.out",
+                yoyo: true,
+                repeat: -1,
+
+            }, '-=12')
+
+            .to(planta, 3, {
+                rotation: 5,
+                //ease: "power3.out",
+                yoyo: true,
+                repeat: -1,
+                transformOrigin: " bottom"
+
+            }, '-=12');
+
+
+
+        //plantas nuvens scene
+        var sceneCredenciado = new ScrollMagic.Scene({
+                triggerElement: "#intro h1",
+                duration: 0,
+                offset: -100,
+                triggerHook: 0,
+
+            })
+            .setTween(credenciado)
+           
+            .on("start", function classe() {
+                body.classList.add("orna__1")
+                body.classList.toggle("orna__3")
+
+            })
+
+        controller.addScene([
+            sceneCredenciado,
+            // sceneSol,
+
+        ]);
+
 
 
 
