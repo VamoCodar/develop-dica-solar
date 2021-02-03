@@ -33,7 +33,7 @@
         max-width: 270px;
         min-width: 255px;
         padding: 0px 10px;
-        padding-top:30px;
+        margin-top:30px;
 
 
         &:hover {
@@ -65,7 +65,7 @@
         .card__img {
             position: relative;
             width: 100%;
-            height: 150px;
+            height: 160px;
             overflow: hidden;
             //border-bottom: .5px solid #2280c133;
             // border-radius: 30px;
@@ -111,7 +111,7 @@
 
         }
 
-        li:first-child {
+        li:nth-child(2) {
 
             position: relative;
             top: -25px;
@@ -119,7 +119,7 @@
 
         }
 
-        li:nth-child(2) {
+        li:nth-child(3) {
             padding-top: 0;
         }
 
