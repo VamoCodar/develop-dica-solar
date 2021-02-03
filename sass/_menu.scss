@@ -13,9 +13,14 @@
     display: none;
   }
 
-.container{
-  max-width: 1140px;
-}
+  .container {
+    max-width: 1140px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
   .menu__wrapper {
     display: flex;
     align-items: center;
@@ -37,8 +42,9 @@
 
       li+li {
         margin-left: 30px;
-        @include d(1050){
-        margin-left: 12px;
+
+        @include d(1050) {
+          margin-left: 12px;
 
         }
       }
