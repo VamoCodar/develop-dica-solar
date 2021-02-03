@@ -134,8 +134,8 @@ function checagemHome() {
 
         // register ScrollTrigger
         //   gsap.registerPlugin(ScrollTrigger);
-        
-       
+
+
 
         //conf dos sliders da home
         const sliders = document.querySelectorAll('.glide')
@@ -217,7 +217,7 @@ function checagemHome() {
 
 
         gsap.registerPlugin(ScrollTrigger);
-        
+
         //timeline 2 =================================================
         const timeline2 = new TimelineMax();
         const timeline = new TimelineMax();
@@ -230,7 +230,7 @@ function checagemHome() {
         //Scroll SCENE ===================================
         let controller = new ScrollMagic.Controller();
 
-   
+
         gsap.to(bolinhasIntro, {
             duration: 1.5,
             x: 50,
@@ -291,7 +291,7 @@ function checagemHome() {
 
             })
             .setTween(credenciado)
-           
+
             .on("start", function classe() {
                 body.classList.add("orna__1")
                 body.classList.toggle("orna__3")
@@ -308,7 +308,7 @@ function checagemHome() {
 
 
 
-       
+
 
     } else if (pageBusca) {
 
@@ -477,6 +477,25 @@ function checagemHome() {
         }).mount()
     } else if (pageLogado) {
 
+        /* onfocusout="sobeTrem()" onfocus="desceTrem()" */
+
+        let inputes = document.querySelectorAll("input")
+
+        inputes.forEach((i) => {
+            i.addEventListener("focusin", desceTrem())
+            i.addEventListener("focusout", sobeTrem())
+        })
+
+        function sobeTrem() {
+            let boodii = document.querySelector("body")
+            boodii.classList.add("saiuInput")
+        }
+
+        function desceTrem() {
+            let boodii = document.querySelector("body")
+            boodii.classList.remove("saiuInput")
+        }
+
         //slider da intro =======================================
         const slider = document.querySelector(".glide__slider-1")
 
@@ -620,7 +639,7 @@ function checagemHome() {
             }
 
         }).mount()
-    }else if (pageCadastro){
+    } else if (pageCadastro) {
         //timeline 2 =================================================
         const timeline2 = new TimelineMax();
         const timeline = new TimelineMax();
@@ -629,8 +648,8 @@ function checagemHome() {
         const nuvem2 = document.querySelector("#nuvem__2")
         const planta = document.querySelector("#planta")
         const painel = document.querySelector("#painel")
-       
-    
+
+
         let credenciado =
             timeline2
             .to(nuvem1, 12, {
