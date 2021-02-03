@@ -1,0 +1,184 @@
+body#page__blog {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    background-color: white;
+
+}
+
+
+
+.container {
+    max-width: 1000px;
+
+    @include d(ll) {
+        max-width: 1280px;
+    }
+}
+
+
+#page__blog {
+    margin-top: 100px;
+
+    .blog__bread {
+        margin-bottom: 30px;
+        padding: 15px 0;
+        border-bottom: 1px solid $cinza-bordas;
+
+        a {
+            color: $cinza-font;
+        }
+
+        a:nth-child(1):after {
+            content: "";
+            background-image: url(../img/bread.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin-left: 5px;
+
+
+        }
+
+    }
+
+    .blog__content {
+        margin-top: 30px;
+        margin-bottom: 1000px;
+    }
+
+    .blog__posts {
+        padding: 10px;
+        border-radius: 10px;
+        padding-bottom: 30px;
+        background: white;
+        filter: drop-shadow(2px 4px 9px rgba(0, 0, 0, 0.1));
+
+        .post__img {
+            border-radius: 5px;
+            position: relative;
+            height: 250px;
+
+            img {
+                position: absolute;
+                object-position: bottom;
+                border-radius: 5px;
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+
+            }
+        }
+
+        h2 a {
+            color: #000000;
+            font-size: 22px;
+            cursor: pointer;
+            line-height: 130%;
+            display: inline-block;
+            margin: 10px 0;
+
+            @include d(s) {
+                font-size: 20px;
+            }
+        }
+
+        .post__detalhes {
+            display: flex;
+            flex-wrap: wrap;
+            //justify-content: space-evenly;
+            align-items: center;
+
+            a {
+                font-size: 14px;
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+
+            a+a {
+                margin-left: 10px;
+            }
+
+            a.data {
+                color: $azul-escuro;
+
+                @include d(s) {
+                    width: 100%;
+                }
+            }
+
+            .tag {
+                padding: 5px;
+                border: 1px solid $cinza-bordas;
+                border-radius: 10px;
+                color: $cinza-claro;
+                transition: 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.03);
+                }
+            }
+
+            .tag-2 {
+                color: $cinza-claro;
+
+                &:before {
+                    content: "";
+                    @include bg-props-contain;
+                    width: 14px;
+                    height: 14px;
+                    display: inline-block;
+                    background-image: url(../img/page-blog/tag.svg);
+                    margin-right: 5px;
+                    vertical-align: middle;
+
+                }
+            }
+
+            p {
+                color: $preto;
+                margin-top: 10px;
+            }
+
+        }
+
+        .ler__mais {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .ler__mais a {
+            background: $amarelo;
+            color: white;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 10px 30px;
+            margin-top: 15px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            margin-right:20px;
+
+            &:after {
+                content: "";
+                @include bg-props-contain;
+                background-image: url(../img/arrow.svg);
+                display: inline-block;
+                width: 20px;
+                height: 15px;
+                transition: 0.4s ease;
+            }
+
+            &:hover {
+                background: #ffa600;
+
+                &:after {
+                    transform: translateX(10px);
+                }
+            }
+        }
+    }
+
+
+}

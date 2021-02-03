@@ -79,3 +79,14 @@ figure{
 :focus {
   outline: 0px transparent !important;
 }
+
+input:-internal-autofill-selected {
+  background-color: transparent !important;    
+}
+
+.form-control:focus {   
+  background-color:white;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: initial;
+}
