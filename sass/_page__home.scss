@@ -449,6 +449,14 @@ body#page__home {
         animation: 4s Sool ease-in-out both;
     }
 
-
+    .select2-container--default .select2-selection--single .select2-selection__arrow b {
+        border-color: $cinza-bordas transparent transparent transparent;
+       
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        right: 10px;
+        top: 55px;
+       
+    }
 
 }

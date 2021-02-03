@@ -32,8 +32,8 @@
         margin: 10px 0;
         max-width: 270px;
         min-width: 255px;
-        padding: 20px 10px;
-        padding-bottom:0;
+        padding: 0px 10px;
+        
 
         &:hover {
             .ver:after {
@@ -69,6 +69,7 @@
             //border-bottom: .5px solid #2280c133;
             // border-radius: 30px;
             padding-bottom: 5px;
+            border-radius:30px 30px 0 0;
 
 
             img {
@@ -82,7 +83,7 @@
         }
 
         h3 {
-            font-size: 18px;
+            font-size: 16px;
             color: $azul-escuro;
             font-weight: bold;
             margin-bottom: 0px;
@@ -90,7 +91,7 @@
         }
 
         li:not(.card__img) {
-            padding: 10px 30px;
+            padding: 10px 20px;
         }
 
         li {

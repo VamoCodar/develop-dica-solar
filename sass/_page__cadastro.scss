@@ -240,6 +240,7 @@ body#page__cadastro {
             align-items: center;
             font-size: 14px;
             max-width: 500px;
+            margin-bottom: 30px;
 
             span {
                 position: absolute;
@@ -289,6 +290,7 @@ body#page__cadastro {
         justify-content: center;
         align-content: center;
         margin-top: 20px;
+        height:100%;
 
         @include d(m) {
             display: flex;
