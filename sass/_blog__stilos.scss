@@ -7,7 +7,7 @@
         color: $cinza-font;
     }
 
-    a:nth-child(1):after {
+    a:after {
         content: "";
         background-image: url(../img/bread.svg);
         background-repeat: no-repeat;
@@ -16,10 +16,11 @@
         height: 10px;
         display: inline-block;
         margin-left: 5px;
-
-
     }
 
+    a:last-child:after {
+       display:none;
+    }
 }
 
 .blog__content {
@@ -84,8 +85,9 @@
 
         a+a {
             margin-left: 10px;
-            @include d(s){
-                margin-left:initial;
+
+            @include d(s) {
+                margin-left: initial;
             }
         }
 
@@ -323,4 +325,3 @@
 
     }
 }
-
